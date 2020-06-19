@@ -75,16 +75,18 @@ function Active() {
         window.addEventListener('scroll', function (e) {
             e.preventDefault();
             let boundries = item.getBoundingClientRect();
+            
             if (boundries.top <= 50 && boundries.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&boundries.right <=(window.innerWidth || document.documentElement.clientWidth))
             {
                 item.classList.add('your-active-class');
-
                 
             }
             else{
                 item.classList.remove('your-active-class');
                
             }
+            navbar.style.display = "block";
+            setTimeout(function(){ navbar.style.display = "none";      }, 3000);
            
         });
 
